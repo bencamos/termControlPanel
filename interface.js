@@ -192,6 +192,10 @@ screen.key(['enter', 'backspace', 'up', 'down', 'left', 'right'], function(ch, k
 });
 
 async function menuGen() {
+  // BOO! Scary EVAL! Everyone knows it should never be used but i believe cases like these are an exception
+  // All it does is convert the page we are currently on to the contents of the array with the same name
+  // Page is a simple INT only incrementing or decrementing
+  // Anyone who can even access this and exploit it kinda deserves it
   var workingArray = eval("a" + page);
   console.log(page, selecting, menusArray.length)
   var finished = "";
